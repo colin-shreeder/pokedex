@@ -137,7 +137,8 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         // borderColor: 'black',
         justifyContent: 'center',
-        color: 'white'
+        color: 'white',
+        backgroundColor: 'red'
     },
     headerStyle: {
         // borderWidth: 1,
