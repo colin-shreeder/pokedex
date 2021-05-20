@@ -23,20 +23,22 @@ class Search extends React.Component {
 
     // gah i'm still getting undefined is not an object. wtf. oh it's referencing js:45... ok so what's there. so search body is trying to be rendered, with data={this.state.data}. is that the issue?
     
-    searchPoke = () => {
-       
-        this.setState({onCall: true});
-        var self = this;
-        axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
-        .then(function(response){
-            self.setState({data: response.data});
-            self.setState({onCall: false});
-            // console.log(response.data)
-        })
-        .catch(function(error){
-            // console.log(error);
-        })
-    }
+    searchPoke = () =>{
+		this.setState({onCall: true});
+		if(this.state.pokeSearch === ""){
+			return;
+		}
+		var self = this;
+		axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
+		.then(function(response){
+			console.log(response.data);
+			self.setState({data: response.data});
+			self.setState({onCall: false});
+		})
+		.catch(function(error){
+			console.log(error);
+		});
+	}
 
     // clearText = () =>{
     //     this.setState({pokeSearch: ""})
