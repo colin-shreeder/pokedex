@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     headerStyle: {
         // borderWidth: 1,
         // borderColor: 'black',
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center'
     },
