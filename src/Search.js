@@ -98,7 +98,7 @@ class Search extends React.Component {
                             placeholder="Search Pokémon (Name or #)"
                             value={this.state.pokeSearch}
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
-                            // onEndEditing={this.searchPoke}
+                            onEndEditing={this.searchPoke}
                         />
                         {/* <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}> */}
                             <Feather name='search' style={styles.iconStyle} onPress={this.searchPoke} />
