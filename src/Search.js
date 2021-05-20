@@ -91,7 +91,7 @@ class Search extends React.Component {
                         rounded={true}
                         style={styles.headerStyle} 
                     >
-                        {/* */}
+
                         
                         <TextInput
                             autoCapitalize="none"
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     headerStyle: {
         // borderWidth: 1,
         // borderColor: 'black',
-        // backgroundColor: 'red',
+        backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center'
     },
