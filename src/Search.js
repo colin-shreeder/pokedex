@@ -40,9 +40,9 @@ class Search extends React.Component {
 		});
 	}
 
-    // clearText = () =>{
-    //     this.setState({pokeSearch: ""})
-    // }
+    clearText = () =>{
+        this.setState({pokeSearch: ""})
+    }
 
     renderBody = () => {
         if (this.state.onCall || !this.state.data){
@@ -100,10 +100,10 @@ class Search extends React.Component {
                             placeholder="Search Pokémon (Name or #)"
                             value={this.state.pokeSearch}
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
-                            onEndEditing={this.searchPoke}
+                            onEndEditing={()=>{this.searchPoke();this.clearText();}}
                         />
                         <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}>
-                            <Feather name='search' style={styles.iconStyle} onPress={this.searchPoke} />
+                            <Feather name='search' style={styles.iconStyle} onPress={()=>{this.searchPoke();this.clearText();}} />
                         </TouchableOpacity>
                         
                         
