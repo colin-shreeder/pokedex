@@ -123,21 +123,21 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 18,
         borderWidth: 1,
-        borderColor: '#24A0ED',
+        borderColor: 'white',
         height: 40,
         borderTopLeftRadius: 5,
         borderBottomLeftRadius: 5
     },
     iconStyle: {
-        fontSize: 40,
+        fontSize: 30,
         alignSelf: 'center',
         justifyContent: 'flex-end',
         // marginHorizontal: 15,
         // borderWidth: 1,
         // borderColor: 'black',
-        backgroundColor: '#24A0ED',
+        backgroundColor: 'white',
         justifyContent: 'center',
-        color: 'white'
+        color: 'black'
     },
     headerStyle: {
         // borderWidth: 1,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     viewStyle: {
-        backgroundColor: '#24A0ED',
+        backgroundColor: 'white',
         width: 80,
         height: 40,
         alignItems: 'center',
