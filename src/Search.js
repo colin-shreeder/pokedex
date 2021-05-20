@@ -100,9 +100,9 @@ class Search extends React.Component {
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
                             // onEndEditing={this.searchPoke}
                         />
-                        <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}>
+                        {/* <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}> */}
                             <Feather name='search' style={styles.iconStyle} onPress={this.searchPoke} />
-                        </TouchableOpacity>
+                        {/* </TouchableOpacity> */}
                         
                         
                     </Header>
