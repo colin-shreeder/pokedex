@@ -38,9 +38,9 @@ class Search extends React.Component {
         })
     }
 
-    clearText = () =>{
-        this.setState({pokeSearch: ""})
-    }
+    // clearText = () =>{
+    //     this.setState({pokeSearch: ""})
+    // }
 
     renderBody = () => {
         if (this.state.onCall || !this.state.data){
@@ -100,7 +100,7 @@ class Search extends React.Component {
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
                             // onEndEditing={this.searchPoke}
                         />
-                        <TouchableOpacity style={styles.viewStyle} onPress={()=>{this.searchPoke(); this.clearText();}}>
+                        <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}>
                             <Feather name='search' style={styles.iconStyle} />
                         </TouchableOpacity>
                         
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         // borderColor: 'black',
         justifyContent: 'center',
-        color: 'black'
+        color: 'white'
     },
     headerStyle: {
         // borderWidth: 1,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderTopRightRadius: 5,
         borderBottomRightRadius: 5,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: 'white'
     }
   });
