@@ -25,7 +25,7 @@ class Search extends React.Component {
     
     searchPoke = () => {
        
-            this.setState({onCall: true});
+        this.setState({onCall: true});
         var self = this;
         axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
         .then(function(response){
@@ -100,9 +100,9 @@ class Search extends React.Component {
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
                             onEndEditing={this.searchPoke}
                         />
-                        {/* <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}> */}
+                        <TouchableOpacity style={styles.viewStyle} onPress={this.searchPoke}>
                             <Feather name='search' style={styles.iconStyle} onPress={this.searchPoke} />
-                        {/* </TouchableOpacity> */}
+                        </TouchableOpacity>
                         
                         
                     </Header>
@@ -137,8 +137,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         // borderColor: 'black',
         justifyContent: 'center',
-        color: 'white',
-        backgroundColor: 'red'
+        color: 'white'
     },
     headerStyle: {
         // borderWidth: 1,
