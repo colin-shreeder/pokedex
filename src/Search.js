@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Platform, ImageBackground, Image, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Platform, ImageBackground, Image, TextInput, TouchableOpacity} from 'react-native';
 import {Button, Header, Item, Icon, Input} from 'native-base';
 import PokeLoader from './PokeLoader';
 import SearchBody from './SearchBody';
@@ -24,7 +24,8 @@ class Search extends React.Component {
     // gah i'm still getting undefined is not an object. wtf. oh it's referencing js:45... ok so what's there. so search body is trying to be rendered, with data={this.state.data}. is that the issue?
     
     searchPoke = () => {
-        this.setState({onCall: true});
+       
+            this.setState({onCall: true});
         var self = this;
         axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
         .then(function(response){
@@ -35,6 +36,10 @@ class Search extends React.Component {
         .catch(function(error){
             // console.log(error);
         })
+    }
+
+    clearText = () =>{
+        this.setState({pokeSearch: ""})
     }
 
     renderBody = () => {
@@ -82,18 +87,23 @@ class Search extends React.Component {
                     <Header
                         searchBar={true}
                         rounded={true}
+                        style={styles.headerStyle} 
                     >
                         {/* */}
-                        <Feather name='search' style={styles.iconStyle} />
+                        
                         <TextInput
                             autoCapitalize="none"
                             autoCorrect={false}
                             style={styles.inputStyle} 
-                            placeholder="Search Pokémon (Name or Number)"
+                            placeholder="Search Pokémon (Name or #)"
                             value={this.state.pokeSearch}
                             onChangeText={(pokeSearch)=>this.setState({pokeSearch})}
-                            onEndEditing={this.searchPoke}
+                            // onEndEditing={this.searchPoke}
                         />
+                        <TouchableOpacity style={styles.viewStyle} onPress={()=>{this.searchPoke(); this.clearText();}}>
+                            <Feather name='search' style={styles.iconStyle} />
+                        </TouchableOpacity>
+                        
                         
                     </Header>
                     {this.renderBody()}
@@ -111,12 +121,39 @@ const styles = StyleSheet.create({
     },
     inputStyle: {
         flex: 1,
-        fontSize: 18
+        fontSize: 18,
+        borderWidth: 1,
+        borderColor: '#24A0ED',
+        height: 40,
+        borderTopLeftRadius: 5,
+        borderBottomLeftRadius: 5
     },
     iconStyle: {
-        fontSize: 35,
+        fontSize: 40,
         alignSelf: 'center',
-        marginHorizontal: 15
+        justifyContent: 'flex-end',
+        // marginHorizontal: 15,
+        // borderWidth: 1,
+        // borderColor: 'black',
+        backgroundColor: '#24A0ED',
+        justifyContent: 'center',
+        color: 'white'
+    },
+    headerStyle: {
+        // borderWidth: 1,
+        // borderColor: 'black',
+        // backgroundColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    viewStyle: {
+        backgroundColor: '#24A0ED',
+        width: 80,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderTopRightRadius: 5,
+        borderBottomRightRadius: 5
     }
   });
 
