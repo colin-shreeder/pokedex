@@ -31,7 +31,7 @@ class Search extends React.Component {
 		var self = this;
 		axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
 		.then(function(response){
-			console.log(response.data);
+			// console.log(response.data);
 			self.setState({data: response.data});
 			self.setState({onCall: false});
 		})
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         // borderColor: 'black',
         justifyContent: 'center',
-        color: 'white'
+        color: 'red'
     },
     headerStyle: {
         // borderWidth: 1,
