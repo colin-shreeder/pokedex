@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         height: 40,
         borderTopLeftRadius: 5,
-        borderBottomLeftRadius: 5
+        borderBottomLeftRadius: 5,
+        backgroundColor: 'white'
     },
     iconStyle: {
         fontSize: 30,
@@ -135,7 +136,6 @@ const styles = StyleSheet.create({
         // marginHorizontal: 15,
         // borderWidth: 1,
         // borderColor: 'black',
-        backgroundColor: 'white',
         justifyContent: 'center',
         color: 'black'
     },
@@ -147,13 +147,14 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     viewStyle: {
-        backgroundColor: 'white',
         width: 80,
         height: 40,
         alignItems: 'center',
         justifyContent: 'center',
         borderTopRightRadius: 5,
-        borderBottomRightRadius: 5
+        borderBottomRightRadius: 5,
+        borderWidth: 1,
+        borderColor: 'white'
     }
   });
 
