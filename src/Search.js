@@ -139,12 +139,12 @@ const styles = StyleSheet.create({
         // borderWidth: 1,
         // borderColor: 'black',
         justifyContent: 'center',
-        color: 'red'
+        color: 'white'
     },
     headerStyle: {
         // borderWidth: 1,
         // borderColor: 'black',
-        // backgroundColor: 'red',
+        backgroundColor: '#3F51B5',
         justifyContent: 'center',
         alignItems: 'center'
     },
