@@ -29,7 +29,7 @@ class Search extends React.Component {
 			return;
 		}
 		var self = this;
-		axios.get("http://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
+		axios.get("https://pokeapi.co/api/v2/pokemon/"+this.state.pokeSearch.toLowerCase())
 		.then(function(response){
 			// console.log(response.data);
 			self.setState({data: response.data});
