@@ -72,7 +72,7 @@ class Search extends React.Component {
           };
 
         return(
-            <View style={{flex: 1}}>
+            <View style={{flex: 1, backgroundColor: 'white'}}>
                 
                 {/* <GestureRecognizer
                         onSwipeUp={(state) => this.onSwipeUp(state)}
