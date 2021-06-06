@@ -1,28 +1,28 @@
-// import { StatusBar } from 'expo-status-bar';
-// <StatusBar style="auto" />
+import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import StackNavigator from './src/navigators/StackNavigation'
 
 
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import Landing from './src/Landing';
-import Search from './src/Search';
-import SearchBody from './src/SearchBody';
+export default function App() {
+  return (
+      <SafeAreaProvider>
+          <StackNavigator />
+      </SafeAreaProvider>
+  );
+}
 
+// const navigator = createStackNavigator(
+//   {
+//     Search: Search,
+//     SearchBody: SearchBody,
+//     Landing: Landing
+//   }, 
+//   {
+//     initialRouteName: 'Landing',
+//     defaultNavigationOptions: {
+//       title:'PokeDex',
+//     },
+//   }
+// );
 
-
-
-const navigator = createStackNavigator(
-  {
-    Search: Search,
-    SearchBody: SearchBody,
-    Landing: Landing
-  }, 
-  {
-    initialRouteName: 'Landing',
-    defaultNavigationOptions: {
-      title:'PokeDex',
-    },
-  }
-);
-
-export default createAppContainer(navigator);
+// export default createAppContainer(navigator);

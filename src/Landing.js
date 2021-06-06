@@ -16,7 +16,7 @@ class Landing extends React.Component {
                     <Button 
                         block={true}
                         style={styles.buttonStyle}
-                        onPress={()=>this.props.navigation.navigate('Search')}>
+                        onPress={()=>this.props.navigation.navigate(' ')}>
                         <Text style={styles.buttonText}>Find Pokémon</Text>
                     </Button>
                     </View>
