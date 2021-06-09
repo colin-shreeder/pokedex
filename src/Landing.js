@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Platform, ImageBackground, Image} from 'react-native';
+import { StyleSheet, Text, View, Platform, ImageBackground, Image, Dimensions} from 'react-native';
 import {Button} from 'native-base';
 var myBackground = require('../assets/landing.jpg')
+
+const isDesktop = Dimensions.get('window').width > 600;
 
 class Landing extends React.Component {
     render(){
         return(
             <View style={styles.container}>
                 <ImageBackground source={myBackground} 
-                  style={styles.backgroundStyle} imageStyle={Platform.OS === 'web' ?{resizeMode: 'contain'}: {}}>
+                  style={styles.backgroundStyle} imageStyle={isDesktop ?{resizeMode: 'contain'}: {}}>
                     <View style={styles.viewStyle}>
                     <Text 
                         style={styles.titleStyle}
