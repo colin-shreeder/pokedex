@@ -8,11 +8,7 @@ class Landing extends React.Component {
     render(){
         return(
             <View style={styles.container}>
-                <ImageBackground 
-                  source={myBackground} 
-                  imageStyle={{resizeMode: 'contain'}}
-                  style={[styles.backgroundStyle, Platform.OS === 'web' ? {backgroundSize: 'contain'} : {}]}
-                  >
+                <ImageBackground source={myBackground} style={styles.backgroundStyle} imageStyle={{resizeMode: 'contain'}}>
                     <View style={styles.viewStyle}>
                     <Text 
                         style={styles.titleStyle}
@@ -43,8 +39,7 @@ const styles = StyleSheet.create({
     },
     backgroundStyle: {
       width: "100%",
-      height: "100%",
-      resizeMode: 'contain'
+      height: "100%"
       },
     titleStyle: {
       fontSize: 30,
