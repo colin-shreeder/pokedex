@@ -8,7 +8,10 @@ class Landing extends React.Component {
     render(){
         return(
             <View style={styles.container}>
-                <ImageBackground source={myBackground} style={styles.backgroundStyle}>
+                <ImageBackground 
+                  source={myBackground} 
+                  style={[styles.backgroundStyle, Platform.OS === 'web' ? {backgroundSize: 'contain'} : {}]}
+                  >
                     <View style={styles.viewStyle}>
                     <Text 
                         style={styles.titleStyle}
@@ -16,7 +19,7 @@ class Landing extends React.Component {
                     <Button 
                         block={true}
                         style={styles.buttonStyle}
-                        onPress={()=>this.props.navigation.navigate(' ')}>
+                        onPress={()=>this.props.switchScreen("search")}>
                         <Text style={styles.buttonText}>Find Pokémon</Text>
                     </Button>
                     </View>
@@ -39,7 +42,8 @@ const styles = StyleSheet.create({
     },
     backgroundStyle: {
       width: "100%",
-      height: "100%"
+      height: "100%",
+
       },
     titleStyle: {
       fontSize: 30,
