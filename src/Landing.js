@@ -8,7 +8,8 @@ class Landing extends React.Component {
     render(){
         return(
             <View style={styles.container}>
-                <ImageBackground source={myBackground} style={styles.backgroundStyle} imageStyle={{resizeMode: 'contain'}}>
+                <ImageBackground source={myBackground} 
+                  style={styles.backgroundStyle} imageStyle={Platform.OS === 'web' ?{resizeMode: 'contain'}: {}}>
                     <View style={styles.viewStyle}>
                     <Text 
                         style={styles.titleStyle}
