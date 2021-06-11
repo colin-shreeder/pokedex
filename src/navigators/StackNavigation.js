@@ -38,8 +38,7 @@ function MyStack() {
         name=" "
         component={Search}
         options={{ 
-            headerStyleInterpolator: forFade,
-            headerShown: false }}
+            headerStyleInterpolator: forFade}}
       />
     </Stack.Navigator>
   );
