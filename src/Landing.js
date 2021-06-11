@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     backgroundStyle: {
-      width: "100%",
-      height: "100%"
+      width: Dimensions.get('window').width,
+      height:Dimensions.get('window').height
       },
     titleStyle: {
       fontSize: 30,
